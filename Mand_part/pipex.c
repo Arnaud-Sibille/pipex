@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:46 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/07 09:47:04 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/07 11:49:10 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,23 @@ int	main(int argc, char **argv, char **envp)
 	if (argc == 5)
 	{
 		if (pipe(pfd) == -1)
-			ft_exit("pipe(pid)", NULL, NULL);
+			ft_exit(NULL, NULL, NULL);
 		fid = fork();
 		if (fid == -1)
-			ft_exit("fork()", NULL, NULL);
+			ft_exit(NULL, NULL, NULL);
 		else if (!fid)
 			ft_exec1(argv, envp, pfd);
 		wait(NULL);
 		fid = fork();
 		if (fid == -1)
-			ft_exit("second fork()", NULL, NULL);
+			ft_exit(NULL, NULL, NULL);
 		else if (!fid)
 			ft_exec2(argv, envp, pfd);
 		close(pfd[0]);
 		close(pfd[1]);
 		wait(NULL);
 	}
-	else
-		write(2, "Wrong number of arguments\n", 26);
+	exit(EXIT_SUCCESS);
+	//else
+	//	write(2, "Wrong number of arguments\n", 26);
 }

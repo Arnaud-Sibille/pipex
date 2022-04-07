@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:37 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/07 09:33:39 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/07 11:54:59 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,19 @@ static int	ft_divide(char *path_line, char c1, char c2)
 	return (len);
 }
 
-static int	ft_exit2(char **cmd)
+static void	ft_exit2(char **cmd)
 {
 	free(cmd);
 	write(2, "No path found in envp\n", 19);
+	exit(EXIT_FAILURE);
+}
+
+static void	ft_exit3(char **cmd)
+{
+	write(2, "command not found: ", 19);
+	write(2, cmd[0], ft_strlen(cmd[0]));
+	write(2, "\n", 1);
+	free(cmd);
 	exit(EXIT_FAILURE);
 }
 
@@ -76,6 +85,6 @@ char	*ft_cmd_to_path(char **cmd, char **env)
 		path_line += ft_strlen(path_line) + 1;
 		len -= ft_strlen(path_line) + 1;
 	}
-	ft_exit("!access(path, F_OK) && !access(path, X_OK)", NULL, cmd);
+	ft_exit3(cmd);
 	return (NULL);
 }

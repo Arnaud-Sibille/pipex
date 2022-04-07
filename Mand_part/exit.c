@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:42 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/07 09:29:43 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/07 11:03:43 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,15 @@ void	ft_exit(char *parg, char *s, char **arr)
 {
 	int	i;
 
-	perror(parg);
+	if (parg)
+	{
+		write(2, strerror(errno), ft_strlen(strerror(errno)));
+		write(2, ": ", 2);
+		write(2, parg, ft_strlen(parg));
+		write(2, "\n", 1);
+	}
+	else
+		perror(NULL);
 	i = -1;
 	if (arr)
 	{
