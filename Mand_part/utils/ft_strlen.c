@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asibille <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 14:32:12 by asibille          #+#    #+#             */
-/*   Updated: 2022/01/03 15:13:28 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/07 09:28:55 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../pipex.h"
 
 size_t	ft_strlen(const char *s)

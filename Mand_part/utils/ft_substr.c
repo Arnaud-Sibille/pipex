@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asibille <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 18:47:47 by asibille          #+#    #+#             */
-/*   Updated: 2022/01/11 13:28:43 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/07 09:29:03 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../pipex.h"
 
 static size_t	ft_malsize(char const *s, unsigned int start, size_t len)

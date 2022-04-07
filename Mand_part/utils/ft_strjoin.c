@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asibille <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 19:35:41 by asibille          #+#    #+#             */
-/*   Updated: 2022/01/10 18:08:20 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/07 09:28:50 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../pipex.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

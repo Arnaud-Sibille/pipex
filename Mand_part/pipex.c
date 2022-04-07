@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/07 09:29:46 by asibille          #+#    #+#             */
+/*   Updated: 2022/04/07 09:47:04 by asibille         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
 	int		pfd[2];
 	int		fid;
@@ -24,4 +36,6 @@ int main(int argc, char **argv, char **envp)
 		close(pfd[1]);
 		wait(NULL);
 	}
+	else
+		write(2, "Wrong number of arguments\n", 26);
 }

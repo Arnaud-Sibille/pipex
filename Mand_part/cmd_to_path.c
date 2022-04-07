@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cmd_to_path.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/07 09:29:37 by asibille          #+#    #+#             */
+/*   Updated: 2022/04/07 09:33:39 by asibille         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 static char	*ft_find_str(char **env, char *s)
 {
 	int		i;
 	int		j;
-	
+
 	if (env)
 	{
 		i = 0;
@@ -35,6 +47,13 @@ static int	ft_divide(char *path_line, char c1, char c2)
 	return (len);
 }
 
+static int	ft_exit2(char **cmd)
+{
+	free(cmd);
+	write(2, "No path found in envp\n", 19);
+	exit(EXIT_FAILURE);
+}
+
 char	*ft_cmd_to_path(char **cmd, char **env)
 {
 	char	*path;
@@ -44,11 +63,7 @@ char	*ft_cmd_to_path(char **cmd, char **env)
 
 	path_line = ft_find_str(env, "PATH=");
 	if (!path_line)
-	{
-		free(cmd);
-		write(2, "No path found in envp\n", 19);
-		exit(EXIT_FAILURE);
-	}
+		ft_exit2(cmd);
 	len = ft_divide(path_line, ' ', ':');
 	while (len > 0)
 	{
@@ -64,16 +79,3 @@ char	*ft_cmd_to_path(char **cmd, char **env)
 	ft_exit("!access(path, F_OK) && !access(path, X_OK)", NULL, cmd);
 	return (NULL);
 }
-
-/*
-int main(int argc, char **argv, char **envp)
-{
-	char **cmd;
-
-	if (argc == 2)
-	{
-		cmd = ft_split(argv[1], ' ');
-		printf("%s\n", ft_cmd_to_path(cmd, envp));
-	}
-}
-*/
