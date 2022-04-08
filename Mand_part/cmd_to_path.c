@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:37 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/08 11:08:28 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:31:21 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,6 @@ static void	ft_exit2(char **cmd)
 	exit(EXIT_FAILURE);
 }
 
-static void	ft_exit3(char **cmd)
-{
-	write(2, "command not found: ", 19);
-	write(2, cmd[0], ft_strlen(cmd[0]));
-	write(2, "\n", 1);
-	free(cmd);
-	exit(EXIT_FAILURE);
-}
-
 char	*ft_cmd_to_path(char **cmd, char **env)
 {
 	char	*path;
@@ -84,12 +75,12 @@ char	*ft_cmd_to_path(char **cmd, char **env)
 			if (!access(path, X_OK))
 				return (path);
 			else
-				ft_exit(NULL, NULL, NULL);
+				ft_exit(cmd[0], NULL, NULL);
 		}
 		free(path);
 		path_line += ft_strlen(path_line) + 1;
 		len -= ft_strlen(path_line) + 1;
 	}
-	ft_exit3(cmd);
+	ft_exit(cmd[0], NULL, cmd);
 	return (NULL);
 }
