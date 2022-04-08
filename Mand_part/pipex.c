@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:46 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/07 11:49:10 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:07:57 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **argv, char **envp)
 {
 	int		pfd[2];
 	int		fid;
+	int		ret;
 
 	if (argc == 5)
 	{
@@ -34,9 +35,9 @@ int	main(int argc, char **argv, char **envp)
 			ft_exec2(argv, envp, pfd);
 		close(pfd[0]);
 		close(pfd[1]);
-		wait(NULL);
+		wait(&fid);
+		ret = WEXITSTATUS(fid);
+		return (ret);
 	}
 	exit(EXIT_SUCCESS);
-	//else
-	//	write(2, "Wrong number of arguments\n", 26);
 }

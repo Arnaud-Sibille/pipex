@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:37 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/07 13:36:35 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:08:28 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ char	*ft_cmd_to_path(char **cmd, char **env)
 		free(temp);
 		if (!access(path, F_OK))
 		{
-			 if (!access(path, X_OK))
-			 	return (path);
+			if (!access(path, X_OK))
+				return (path);
 			else
 				ft_exit(NULL, NULL, NULL);
 		}
