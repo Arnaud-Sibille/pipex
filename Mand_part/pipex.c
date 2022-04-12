@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:46 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/08 14:02:13 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/12 09:07:02 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ int	main(int argc, char **argv, char **envp)
 		ret = WEXITSTATUS(fid);
 		return (ret);
 	}
-	exit(EXIT_SUCCESS);
 }

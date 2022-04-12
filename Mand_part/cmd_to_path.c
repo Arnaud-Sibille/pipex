@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:37 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/08 13:31:21 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/12 09:05:35 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,6 @@ static int	ft_divide(char *path_line, char c1, char c2)
 	return (len);
 }
 
-static void	ft_exit2(char **cmd)
-{
-	free(cmd);
-	write(2, "No path found in envp\n", 19);
-	exit(EXIT_FAILURE);
-}
-
 char	*ft_cmd_to_path(char **cmd, char **env)
 {
 	char	*path;
@@ -62,8 +55,6 @@ char	*ft_cmd_to_path(char **cmd, char **env)
 	int		len;
 
 	path_line = ft_find_str(env, "PATH=");
-	if (!path_line)
-		ft_exit2(cmd);
 	len = ft_divide(path_line, ' ', ':');
 	while (len > 0)
 	{
