@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:46 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/12 09:07:02 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/12 18:03:12 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main(int argc, char **argv, char **envp)
 			ft_exit(NULL, NULL, NULL);
 		else if (!fid)
 			ft_exec1(argv, envp, pfd);
-		wait(NULL);
 		fid = fork();
 		if (fid == -1)
 			ft_exit(NULL, NULL, NULL);
