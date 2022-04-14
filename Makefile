@@ -6,7 +6,7 @@
 #    By: asibille <asibille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/07 09:29:58 by asibille          #+#    #+#              #
-#    Updated: 2022/04/07 09:30:04 by asibille         ###   ########.fr        #
+#    Updated: 2022/04/14 10:29:44 by asibille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ OBJS = ${SRCS:.c=.o}
 MAINOBJ = ${MAIN:.c=.o}
 
 NAME = pipex
+
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 

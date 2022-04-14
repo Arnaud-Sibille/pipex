@@ -6,7 +6,7 @@
 /*   By: asibille <asibille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 09:29:49 by asibille          #+#    #+#             */
-/*   Updated: 2022/04/07 11:00:15 by asibille         ###   ########.fr       */
+/*   Updated: 2022/04/14 10:23:58 by asibille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 //exec
 void	ft_exec1(char **argv, char **env, int *pfd);
-void	ft_exec2(char **argv, char **env, int *pfd);
+void	ft_exec2(char **argv, char **env, int *pfd, int file_fd);
 
 //cmd_to_path
 char	*ft_cmd_to_path(char **cmd, char **env);
